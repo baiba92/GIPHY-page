@@ -1,0 +1,51 @@
+h1 {
+    margin-top: 50px;
+    margin-bottom: 40px;
+    height: 120px;
+    background-image: url("https://media1.giphy.com/media/ZwMF9XIF7eo9i/giphy.gif?cid=cb3d769bujxhbvgre5fivpaw58jwwk2fynz0yryy45x7zmez&rid=giphy.gif&ct=g");
+    background-size: cover;
+    font-family: Arvo, serif;
+    font-size: 100px;
+    color: whitesmoke;
+    text-align: center;
+    letter-spacing: 7px;
+}
+
+body {
+    background-color: darkslategray;
+    text-align: center;
+}
+
+form {
+    font-family: Arvo, serif;
+    font-size: 20px;
+    color: whitesmoke;
+    line-height: 30px;
+}
+
+.button {
+    margin-top: 10px;
+    width: 90px;
+    height: 28px;
+    background-color: lightslategray;
+    font-family: Arvo, serif;
+    font-size: 16px;
+    color: whitesmoke;
+    text-align: center;
+}
+
+.button:hover {
+    background-color: indigo;
+}
+
+.input {
+    margin-left: 10px;
+    padding: 3px;
+    background-color: whitesmoke;
+    font-family: Arvo, sans-serif;
+}
+
+.gif {
+    margin: 5px;
+    display: inline;
+}

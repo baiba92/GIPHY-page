@@ -1,0 +1,12 @@
+{
+    "name": "baiba/giphy-page",
+    "autoload": {
+        "psr-4": {
+            "GiphyPage\\": "app/"
+        }
+    },
+    "require": {
+        "guzzlehttp/guzzle": "^7.5",
+        "vlucas/phpdotenv": "^5.5"
+    }
+}
