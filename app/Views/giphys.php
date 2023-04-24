@@ -1,10 +1,15 @@
 <?php declare(strict_types=1);
 
-$client = new GiphyPage\GiphyClient();
+namespace GiphyPage\Views;
+
+use GiphyPage\GiphyClient;
+use GiphyPage\Models\Giphy;
+
+$client = new GiphyClient();
 
 $count = 0;
 foreach ($client->getCollection($client->fetch($_GET['keyWord'], (int)$_GET['amount'])) as $giphy) {
-    /** @var GiphyPage\Models\Giphy $giphy */
+    /** @var Giphy $giphy */
     if ($count % 4 === 0) {
         echo "<br>";
     }
