@@ -12,18 +12,20 @@ h1 {
 }
 
 body {
+    margin-bottom: 50px;
     background-color: darkslategray;
     text-align: center;
 }
 
-form {
+form,
+p {
     font-family: Arvo, serif;
     font-size: 20px;
     color: whitesmoke;
     line-height: 30px;
 }
 
-.button {
+.searchButton {
     margin-top: 10px;
     width: 90px;
     height: 28px;
@@ -34,7 +36,20 @@ form {
     text-align: center;
 }
 
-.button:hover {
+.trendingButton {
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 150px;
+    height: 28px;
+    background-color: lightslategray;
+    font-family: Arvo, serif;
+    font-size: 16px;
+    color: whitesmoke;
+    text-align: center;
+}
+
+.searchButton:hover,
+.trendingButton:hover {
     background-color: indigo;
 }
 
