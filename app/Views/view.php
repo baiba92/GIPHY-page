@@ -14,13 +14,13 @@
     <label for="amount">How many GIFS to display? (up to 25)</label>
     <input class="input" id="amount" type="number" name="amount" max="25" min="1"/><br>
     <input type="hidden" name="search_submitted" value="1"/>
-    <button class="searchButton" type="submit" value="search">Search</button>
+    <input class="searchButton" type="submit" value="Search"/>
     <br><br>
 </form>
 <form action="" method="GET">
     <label for="trending">Out of ideas? Get some here!</label>
     <input type="hidden" name="trending_submitted" value="1"/>
-    <button class="trendingButton" id="trending" type="submit" name="submit" value="trending">Show trending</button>
+    <input class="trendingButton" id="trending" type="submit" value="Show trending"/>
     <br><br>
 </form>
 <?php require_once 'app\Views\giphys.php'; ?>
