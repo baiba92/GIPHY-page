@@ -25,12 +25,13 @@ if (isset($_GET['trending_submitted'])) {
     $collection = $client->getCollection($client->fetchSearched($_GET['keyWord'], (int)$_GET['amount']));
 
     if (!$collection) {
-        echo "<p>No GIFS to show, search again</p><br>";
+        echo "<p>No GIFS to show, search again</p>";
         exit;
     }
 
     $keyWord = ucfirst($_GET['keyWord']);
     echo "<p>$keyWord GIFS</p>";
+
     foreach ($collection as $giphy) {
         /** @var Giphy $giphy */
         if ($count % 4 === 0) {

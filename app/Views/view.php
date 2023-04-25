@@ -16,7 +16,6 @@
     <input type="hidden" name="search_submitted" value="1"/>
     <button class="searchButton" type="submit" value="search">Search</button>
     <br><br>
-
 </form>
 <form action="" method="GET">
     <label for="trending">Out of ideas? Get some here!</label>
