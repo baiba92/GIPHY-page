@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giphy page</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&display=swap">
+</head>
+<body>
+<h1>GIFINATOR</h1>
+<form action="/" method="GET">
+    <label for="keyWord">Enter keyword to search GIFS:</label>
+    <input class="input"
+           id="keyWord"
+           type="text"
+           name="keyWord"
+           maxlength="50"><br>
+    <label for="amount">How many GIFS to display? (up to 25)</label>
+    <input class="input"
+           id="amount"
+           type="number"
+           name="amount"
+           max="25"
+           min="1"><br>
+    <input class="searchButton"
+           type="submit"
+           value="Search">
+    <input type="hidden"
+           name="formSubmitted"
+           value="true"><br>
+</form>
+<form action="/trending" method="GET">
+    <label for="trending">Out of ideas? Get some here!</label>
+    <input class="trendingButton"
+           id="trending"
+           type="submit"
+           value="Show trending">
+    <input type="hidden"
+           name="formSubmitted"
+           value="true"><br>
+</form>
+{% if formSubmitted == true and collection is null %}
+    <p>No GIFS to show, search again</p>
+{% elseif formSubmitted == true %}
+    <p>{{ keyWord ? keyWord|capitalize : 'Trending' }} GIFS</p>
+{% endif %}
+<div>
+{% for giphy in collection %}
+    <img class="gif" src="{{ giphy.url }}" alt="{{ giphy.title }}">
+{% endfor %}
+</div>
+</body>
+</html>

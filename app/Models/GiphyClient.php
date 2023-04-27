@@ -1,9 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace GiphyPage;
+namespace GiphyPage\Models;
 
 use GuzzleHttp\Client;
-use GiphyPage\Models\Giphy;
 
 class GiphyClient
 {
@@ -14,17 +13,17 @@ class GiphyClient
         $this->client = new Client();
     }
 
-    public function fetchSearched(string $keyWord, int $amount): array
+    public function fetchSearched(): array
     {
         $response = $this->client->get('api.giphy.com/v1/gifs/search', [
             'query' => [
                 'api_key' => $_ENV['GIPHY_API_KEY'],
-                'q' => $keyWord,
-                'limit' => $amount,
-                'offset' => floor(rand(0, 4999))
+                'q' => $_GET['keyWord'],
+                'limit' => $_GET['amount'],
+                'offset' => floor(rand(0, 1000))
             ]
         ]);
-        return json_decode($response->getBody()->getContents())->data;
+        return $this->createCollection(json_decode($response->getBody()->getContents())->data);
     }
 
     public function fetchTrending(): array
@@ -32,14 +31,14 @@ class GiphyClient
         $response = $this->client->get('api.giphy.com/v1/gifs/trending', [
             'query' => [
                 'api_key' => $_ENV['GIPHY_API_KEY'],
-                'limit' => 8,
-                'offset' => floor(rand(0, 4999))
+                'limit' => 4,
+                'offset' => floor(rand(0, 1000))
             ]
         ]);
-        return json_decode($response->getBody()->getContents())->data;
+        return $this->createCollection(json_decode($response->getBody()->getContents())->data);
     }
 
-    public function getCollection(array $fetchedRecords): array
+    private function createCollection(array $fetchedRecords): array
     {
         $collection = [];
         foreach ($fetchedRecords as $giphy) {
